@@ -36,3 +36,22 @@ final textVerySmallBoldSmokyBlack = TextStyle(
   fontSize: SizeConfig.blockV! * 2,
   fontWeight: FontWeight.bold,
 );
+
+// Text with Caribbean Green Color (Large, Medium, and Small)
+final textVerySmallBoldCarGreen = TextStyle(
+  color: caribbeanGreen,
+  fontSize: SizeConfig.blockV! * 2,
+  fontWeight: FontWeight.bold,
+);
+
+final textSmallBoldCarGreen = TextStyle(
+  color: caribbeanGreen,
+  fontSize: SizeConfig.blockV! * 3.5,
+  fontWeight: FontWeight.bold,
+);
+
+final textLargeBoldCarGreen = TextStyle(
+  color: caribbeanGreen,
+  fontSize: SizeConfig.blockV! * 5,
+  fontWeight: FontWeight.bold,
+);

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:rps_battle/app/routes/app_pages.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/text_theme.dart';
 import '../../../../core/utils/size_config.dart';
-import '../controllers/home_controller.dart';
+import '../../../routes/app_pages.dart';
+import '../controllers/information_controller.dart';
 
-class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+class InformationView extends GetView<InformationController> {
+  const InformationView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,33 +37,21 @@ class HomeView extends GetView<HomeController> {
               backgroundColor: Colors.transparent,
               elevation: 0,
               centerTitle: true,
-              title: RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "RPS ",
-                      style: textVerySmallBoldCarGreen,
-                    ),
-                    TextSpan(
-                      text: "Battle",
-                      style: textVerySmallBoldWhite,
-                    ),
-                  ],
+              leading: IconButton(
+                onPressed: () {
+                  Get.offAllNamed(
+                    Routes.HOME,
+                  );
+                },
+                icon: Image.asset(
+                  'assets/icons/back.png',
+                  height: SizeConfig.blockV! * 3.5,
                 ),
               ),
-              actions: [
-                IconButton(
-                  onPressed: () {
-                    Get.offAllNamed(
-                      Routes.INFORMATION,
-                    );
-                  },
-                  icon: Image.asset(
-                    'assets/icons/information.png',
-                    height: SizeConfig.blockV! * 3.5,
-                  ),
-                ),
-              ],
+              title: Text(
+                "Information",
+                style: textVerySmallBoldWhite,
+              ),
             ),
           ),
 
@@ -76,43 +64,43 @@ class HomeView extends GetView<HomeController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Section - Logo
+                // Section - Profile
                 Image.asset(
-                  'assets/icons/logo.png',
+                  'assets/icons/man.png',
                   height: SizeConfig.blockV! * 25,
                 ),
                 const SizedBox(
                   height: 20,
                 ),
 
-                // Section - Rock, Paper, Scissors, and Description
+                // Section - M. Reza Faturrahman and Description
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Section - Rock
+                        // Section - M.
                         Text(
-                          "Rock",
+                          "M.",
                           style: textLargeBoldCarGreen,
                         ),
 
-                        // Section - Paper
+                        // Section - Reza
                         Text(
-                          "Paper",
+                          "Reza",
                           style: textLargeBoldWhite,
                         ),
 
-                        // Section - Scissors
+                        // Section - Faturrahman
                         Text(
-                          "Scissors",
+                          "Faturrahman",
                           style: textLargeBoldCarGreen,
                         ),
 
                         // Section - Description
                         Text(
-                          "Remember, victory is just a play away!",
+                          "The creator of RPS Battle",
                           style: textVerySmall300White,
                         ),
                       ],
@@ -123,7 +111,7 @@ class HomeView extends GetView<HomeController> {
             ),
           ),
 
-          // Section - Exit and Let's Play button
+          // Section - GitHub and LinkedIn button
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
@@ -133,10 +121,12 @@ class HomeView extends GetView<HomeController> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Section - Exit button
+                  // Section - GitHub button
                   ElevatedButton(
                     onPressed: () {
-                      SystemNavigator.pop();
+                      launchUrlString(
+                        "https://github.com/rezafatur",
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -149,7 +139,7 @@ class HomeView extends GetView<HomeController> {
                       backgroundColor: caribbeanGreen,
                     ),
                     child: Text(
-                      'Exit',
+                      'GitHub',
                       style: textVerySmallBoldSmokyBlack,
                     ),
                   ),
@@ -160,8 +150,8 @@ class HomeView extends GetView<HomeController> {
                   // Section - Let's Play button
                   ElevatedButton(
                     onPressed: () {
-                      Get.offAllNamed(
-                        Routes.CHOOSE_OPPONENT,
+                      launchUrlString(
+                        "https://www.linkedin.com/in/muhammad-reza-faturrahman",
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -169,13 +159,13 @@ class HomeView extends GetView<HomeController> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 50,
+                        horizontal: 40,
                         vertical: 20,
                       ),
                       backgroundColor: caribbeanGreen,
                     ),
                     child: Text(
-                      "Let's Play",
+                      "LinkedIn",
                       style: textVerySmallBoldSmokyBlack,
                     ),
                   ),
