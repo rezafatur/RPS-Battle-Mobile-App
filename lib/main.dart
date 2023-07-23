@@ -5,7 +5,15 @@ import 'app/routes/app_pages.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Future.delayed(
+    const Duration(
+      milliseconds: 300,
+    ),
+  );
+
   final SharedPreferences prefs = await SharedPreferences.getInstance();
+
   bool isOnboardingCompleted = prefs.getBool("onboarding_completed") ?? false;
 
   runApp(

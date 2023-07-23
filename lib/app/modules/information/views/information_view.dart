@@ -29,7 +29,7 @@ class InformationView extends GetView<InformationController> {
           // Section - App Bar
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 30,
+              horizontal: 20,
             ),
             child: AppBar(
               backgroundColor: Colors.transparent,
@@ -56,7 +56,7 @@ class InformationView extends GetView<InformationController> {
           // Section - Main
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 40,
+              horizontal: 30,
               vertical: 20,
             ),
             child: Column(
@@ -110,64 +110,71 @@ class InformationView extends GetView<InformationController> {
           ),
 
           // Section - GitHub and LinkedIn button
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 100,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Section - GitHub button
-                  ElevatedButton(
-                    onPressed: () {
-                      launchUrlString(
-                        "https://github.com/rezafatur",
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 30,
+            ),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 100,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Section - GitHub button
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          launchUrlString(
+                            "https://github.com/rezafatur",
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 20,
+                          ),
+                          backgroundColor: caribbeanGreen,
+                        ),
+                        child: Text(
+                          'GitHub',
+                          style: textVerySmallBoldSmokyBlack,
+                        ),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 40,
-                        vertical: 20,
-                      ),
-                      backgroundColor: caribbeanGreen,
                     ),
-                    child: Text(
-                      'GitHub',
-                      style: textVerySmallBoldSmokyBlack,
+                    const SizedBox(
+                      width: 20,
                     ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
 
-                  // Section - Let's Play button
-                  ElevatedButton(
-                    onPressed: () {
-                      launchUrlString(
-                        "https://www.linkedin.com/in/muhammad-reza-faturrahman",
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    // Section - Let's Play button
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          launchUrlString(
+                            "https://www.linkedin.com/in/muhammad-reza-faturrahman",
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 20,
+                          ),
+                          backgroundColor: caribbeanGreen,
+                        ),
+                        child: Text(
+                          "LinkedIn",
+                          style: textVerySmallBoldSmokyBlack,
+                        ),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 40,
-                        vertical: 20,
-                      ),
-                      backgroundColor: caribbeanGreen,
                     ),
-                    child: Text(
-                      "LinkedIn",
-                      style: textVerySmallBoldSmokyBlack,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

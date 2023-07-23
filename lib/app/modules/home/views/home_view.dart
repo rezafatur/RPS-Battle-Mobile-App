@@ -29,7 +29,7 @@ class HomeView extends GetView<HomeController> {
           // Section - App Bar
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 30,
+              horizontal: 20,
             ),
             child: AppBar(
               backgroundColor: Colors.transparent,
@@ -68,7 +68,7 @@ class HomeView extends GetView<HomeController> {
           // Section - Main
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 40,
+              horizontal: 30,
               vertical: 20,
             ),
             child: Column(
@@ -122,62 +122,69 @@ class HomeView extends GetView<HomeController> {
           ),
 
           // Section - Exit and Let's Play button
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 100,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Section - Exit button
-                  ElevatedButton(
-                    onPressed: () {
-                      SystemNavigator.pop();
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 30,
+            ),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 100,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Section - Exit button
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          SystemNavigator.pop();
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 20,
+                          ),
+                          backgroundColor: caribbeanGreen,
+                        ),
+                        child: Text(
+                          'Exit',
+                          style: textVerySmallBoldSmokyBlack,
+                        ),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 40,
-                        vertical: 20,
-                      ),
-                      backgroundColor: caribbeanGreen,
                     ),
-                    child: Text(
-                      'Exit',
-                      style: textVerySmallBoldSmokyBlack,
+                    const SizedBox(
+                      width: 20,
                     ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
 
-                  // Section - Let's Play button
-                  ElevatedButton(
-                    onPressed: () {
-                      Get.offAllNamed(
-                        Routes.CHOOSE_OPPONENT,
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    // Section - Let's Play button
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Get.offAllNamed(
+                            Routes.CHOOSE_OPPONENT,
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 20,
+                          ),
+                          backgroundColor: caribbeanGreen,
+                        ),
+                        child: Text(
+                          "Let's Play",
+                          style: textVerySmallBoldSmokyBlack,
+                        ),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 50,
-                        vertical: 20,
-                      ),
-                      backgroundColor: caribbeanGreen,
                     ),
-                    child: Text(
-                      "Let's Play",
-                      style: textVerySmallBoldSmokyBlack,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

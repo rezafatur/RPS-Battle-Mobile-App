@@ -28,7 +28,7 @@ class ChooseOpponentView extends GetView<ChooseOpponentController> {
           // Section - App Bar
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 30,
+              horizontal: 20,
             ),
             child: AppBar(
               backgroundColor: Colors.transparent,
@@ -65,7 +65,7 @@ class ChooseOpponentView extends GetView<ChooseOpponentController> {
           // Section - Main
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 40,
+              horizontal: 30,
               vertical: 20,
             ),
             child: Column(
@@ -113,15 +113,15 @@ class ChooseOpponentView extends GetView<ChooseOpponentController> {
           ),
 
           // Section - Friend and Computer button
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 100,
-              ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 30,
+            ),
+            child: Align(
+              alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 30,
+                  vertical: 100,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
