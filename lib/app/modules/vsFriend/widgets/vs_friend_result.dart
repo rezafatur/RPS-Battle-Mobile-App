@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rps_battle/app/modules/vsFriend/controllers/vs_friend_controller.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/text_theme.dart';
 import '../../../../core/utils/size_config.dart';
 import '../../../routes/app_pages.dart';
-import '../controllers/vs_computer_controller.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({
@@ -12,7 +12,7 @@ class ResultScreen extends StatelessWidget {
     required this.controller,
   }) : super(key: key);
 
-  final VsComputerController controller;
+  final VsFriendController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -56,30 +56,30 @@ class ResultScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Section - Choice of the user and the computer
+              // Section - Choice of the player 1 and the player 2
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Section - Choice from the user
+                  // Section - Choice from the player 1
                   Expanded(
                     child: Column(
                       children: [
                         // Section - Image
                         Image.asset(
-                          getImageAssets(controller.userChoice.value),
+                          getImageAssets(controller.player1Choice.value),
                           height: SizeConfig.blockV! * 10,
                         ),
 
                         // Section - Text
                         Text(
-                          getChoiceText(controller.userChoice.value),
+                          getChoiceText(controller.player1Choice.value),
                           style: textSmallBoldWhite,
                         ),
                         const SizedBox(
                           height: 10,
                         ),
 
-                        // Section - You
+                        // Section - Player 1
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
@@ -89,7 +89,7 @@ class ResultScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(10),
                             child: Center(
                               child: Text(
-                                "You",
+                                "Player 1",
                                 style: textVerySmallBoldSmokyBlack,
                               ),
                             ),
@@ -102,26 +102,26 @@ class ResultScreen extends StatelessWidget {
                     width: 20,
                   ),
 
-                  // Section - Choice from the computer
+                  // Section - Choice from the player 2
                   Expanded(
                     child: Column(
                       children: [
                         // Section - Image
                         Image.asset(
-                          getImageAssets(controller.computerChoice.value),
+                          getImageAssets(controller.player2Choice.value),
                           height: SizeConfig.blockV! * 10,
                         ),
 
                         // Section - Text
                         Text(
-                          getChoiceText(controller.computerChoice.value),
+                          getChoiceText(controller.player2Choice.value),
                           style: textSmallBoldWhite,
                         ),
                         const SizedBox(
                           height: 10,
                         ),
 
-                        // Section - Computer
+                        // Section - Player 2
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
@@ -131,7 +131,7 @@ class ResultScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(10),
                             child: Center(
                               child: Text(
-                                "Computer",
+                                "Player 2",
                                 style: textVerySmallBoldSmokyBlack,
                               ),
                             ),
@@ -147,10 +147,10 @@ class ResultScreen extends StatelessWidget {
               ),
 
               // Section - Win, Tied, or Lose
-              controller.getResult() == "win"
+              controller.getResult() == "Player 1 win"
                   ? Column(
                       children: [
-                        // Section - Win
+                        // Section - Player 1 win
                         RichText(
                           textAlign: TextAlign.center,
                           text: TextSpan(
@@ -174,7 +174,7 @@ class ResultScreen extends StatelessWidget {
                           height: 20,
                         ),
 
-                        // Section - User image
+                        // Section - Profile image
                         Image.asset(
                           'assets/icons/user.png',
                           height: SizeConfig.blockV! * 20,
@@ -183,13 +183,13 @@ class ResultScreen extends StatelessWidget {
                           height: 20,
                         ),
 
-                        // Section - You winner
+                        // Section - Player 1 winner
                         RichText(
                           textAlign: TextAlign.center,
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                text: "You\n",
+                                text: "Player 1\n",
                                 style: textSmallBoldWhite,
                               ),
                               TextSpan(
@@ -228,7 +228,7 @@ class ResultScreen extends StatelessWidget {
                               height: 20,
                             ),
 
-                            // Section - User image
+                            // Section - Profile image
                             Image.asset(
                               'assets/icons/user.png',
                               height: SizeConfig.blockV! * 20,
@@ -237,13 +237,13 @@ class ResultScreen extends StatelessWidget {
                               height: 20,
                             ),
 
-                            // Section - You & Computer draw
+                            // Section - Player 1 & Player 2 draw
                             RichText(
                               textAlign: TextAlign.center,
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: "You & Computer\n",
+                                    text: "Player 1 & Player 2\n",
                                     style: textSmallBoldWhite,
                                   ),
                                   TextSpan(
@@ -257,21 +257,21 @@ class ResultScreen extends StatelessWidget {
                         )
                       : Column(
                           children: [
-                            // Section - Lose
+                            // Section - Player 2 win
                             RichText(
                               textAlign: TextAlign.center,
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: "😥😥😥\n",
+                                    text: "🥳🥳🥳\n",
                                     style: textSmallBoldWhite,
                                   ),
                                   TextSpan(
-                                    text: "Bad result\n",
+                                    text: "Congratulation\n",
                                     style: textSmallBoldWhite,
                                   ),
                                   TextSpan(
-                                    text: "for",
+                                    text: "to",
                                     style: textVerySmall300White,
                                   ),
                                 ],
@@ -281,7 +281,7 @@ class ResultScreen extends StatelessWidget {
                               height: 20,
                             ),
 
-                            // Section - User image
+                            // Section - Profile image
                             Image.asset(
                               'assets/icons/user.png',
                               height: SizeConfig.blockV! * 20,
@@ -290,17 +290,17 @@ class ResultScreen extends StatelessWidget {
                               height: 20,
                             ),
 
-                            // Section - You lose
+                            // Section - Player 2 winner
                             RichText(
                               textAlign: TextAlign.center,
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: "You\n",
+                                    text: "Player 2\n",
                                     style: textSmallBoldWhite,
                                   ),
                                   TextSpan(
-                                    text: "Lose",
+                                    text: "Winner",
                                     style: textVerySmall300White,
                                   ),
                                 ],
@@ -319,7 +319,8 @@ class ResultScreen extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        controller.isReady.value = false;
+                        controller.isReadyPlayer1.value = false;
+                        controller.isReadyPlayer2.value = false;
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 0,

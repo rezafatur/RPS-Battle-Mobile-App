@@ -129,7 +129,11 @@ class ChooseOpponentView extends GetView<ChooseOpponentController> {
                     // Section - Friend button
                     Expanded(
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.offAllNamed(
+                            Routes.VS_FRIEND,
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),

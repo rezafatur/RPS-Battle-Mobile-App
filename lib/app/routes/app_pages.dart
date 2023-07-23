@@ -10,6 +10,8 @@ import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
 import '../modules/vsComputer/bindings/vs_computer_binding.dart';
 import '../modules/vsComputer/views/vs_computer_view.dart';
+import '../modules/vsFriend/bindings/vs_friend_binding.dart';
+import '../modules/vsFriend/views/vs_friend_view.dart';
 
 part 'app_routes.dart';
 
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.VS_COMPUTER,
       page: () => const VsComputerView(),
       binding: VsComputerBinding(),
+    ),
+    GetPage(
+      name: _Paths.VS_FRIEND,
+      page: () => const VsFriendView(),
+      binding: VsFriendBinding(),
     ),
   ];
 }
