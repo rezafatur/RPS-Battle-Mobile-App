@@ -104,6 +104,7 @@ class OnboardingView extends GetView<OnboardingController> {
                             padding: const EdgeInsets.all(30),
                             child: ElevatedButton(
                               onPressed: () {
+                                controller.completeOnboarding();
                                 Get.offAll(
                                   const HomeView(),
                                 );

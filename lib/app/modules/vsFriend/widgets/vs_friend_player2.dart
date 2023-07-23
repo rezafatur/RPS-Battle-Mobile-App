@@ -5,7 +5,6 @@ import 'package:rps_battle/app/modules/vsFriend/controllers/vs_friend_controller
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/text_theme.dart';
 import '../../../../core/utils/size_config.dart';
-import '../../../routes/app_pages.dart';
 
 class GameScreenPlayer2 extends StatelessWidget {
   const GameScreenPlayer2({

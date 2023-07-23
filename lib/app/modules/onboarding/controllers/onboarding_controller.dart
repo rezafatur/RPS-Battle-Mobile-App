@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rps_battle/app/data/models/onboarding_data.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnboardingController extends GetxController {
   final _contents = <Onboarding>[];
@@ -26,5 +27,10 @@ class OnboardingController extends GetxController {
       duration: const Duration(milliseconds: 200),
       curve: Curves.easeIn,
     );
+  }
+
+  void completeOnboarding() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool("onboarding_completed", true);
   }
 }

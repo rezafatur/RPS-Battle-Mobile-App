@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'app/routes/app_pages.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool isOnboardingCompleted = prefs.getBool("onboarding_completed") ?? false;
+
   runApp(
     GetMaterialApp(
       title: "RPS Battle",
@@ -10,7 +15,7 @@ void main() {
         fontFamily: 'Montserrat',
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.ONBOARDING,
+      initialRoute: isOnboardingCompleted ? Routes.HOME : Routes.ONBOARDING,
       getPages: AppPages.routes,
     ),
   );
