@@ -8,12 +8,11 @@ import '../controllers/choose_opponent_controller.dart';
 
 class ChooseOpponentView extends GetView<ChooseOpponentController> {
   const ChooseOpponentView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // Initializing the screen width and height
     SizeConfig().init(context);
-    double width = SizeConfig.screenW!;
-    double height = SizeConfig.screenH!;
 
     return Scaffold(
       backgroundColor: smokyBlack,
@@ -160,7 +159,11 @@ class ChooseOpponentView extends GetView<ChooseOpponentController> {
                     // Section - Computer button
                     Expanded(
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.offAllNamed(
+                            Routes.VS_COMPUTER,
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),

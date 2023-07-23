@@ -7,6 +7,7 @@ abstract class Routes {
   static const ONBOARDING = _Paths.ONBOARDING;
   static const INFORMATION = _Paths.INFORMATION;
   static const CHOOSE_OPPONENT = _Paths.CHOOSE_OPPONENT;
+  static const VS_COMPUTER = _Paths.VS_COMPUTER;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const ONBOARDING = '/onboarding';
   static const INFORMATION = '/information';
   static const CHOOSE_OPPONENT = '/choose-opponent';
+  static const VS_COMPUTER = '/vs-computer';
 }

@@ -10,7 +10,7 @@ void main() {
         fontFamily: 'Montserrat',
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.HOME,
+      initialRoute: Routes.ONBOARDING,
       getPages: AppPages.routes,
     ),
   );

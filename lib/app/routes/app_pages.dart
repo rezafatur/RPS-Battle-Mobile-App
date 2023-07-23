@@ -8,6 +8,8 @@ import '../modules/information/bindings/information_binding.dart';
 import '../modules/information/views/information_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
+import '../modules/vsComputer/bindings/vs_computer_binding.dart';
+import '../modules/vsComputer/views/vs_computer_view.dart';
 
 part 'app_routes.dart';
 
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.CHOOSE_OPPONENT,
       page: () => const ChooseOpponentView(),
       binding: ChooseOpponentBinding(),
+    ),
+    GetPage(
+      name: _Paths.VS_COMPUTER,
+      page: () => const VsComputerView(),
+      binding: VsComputerBinding(),
     ),
   ];
 }
