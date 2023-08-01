@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:rps_battle/app/routes/app_pages.dart';
-import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/text_theme.dart';
-import '../../../../core/utils/size_config.dart';
-import '../controllers/home_controller.dart';
+import 'package:rps_battle/app/modules/chooseOpponent/views/choose_opponent_view.dart';
+import 'package:rps_battle/app/modules/home/controllers/home_controller.dart';
+import 'package:rps_battle/app/modules/information/views/information_view.dart';
+import 'package:rps_battle/core/theme/colors.dart';
+import 'package:rps_battle/core/theme/text_theme.dart';
+import 'package:rps_battle/core/utils/size_config.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
@@ -52,8 +53,8 @@ class HomeView extends GetView<HomeController> {
               actions: [
                 IconButton(
                   onPressed: () {
-                    Get.offAllNamed(
-                      Routes.INFORMATION,
+                    Get.to(
+                      () => const InformationView(),
                     );
                   },
                   icon: Image.asset(
@@ -151,7 +152,7 @@ class HomeView extends GetView<HomeController> {
                           backgroundColor: caribbeanGreen,
                         ),
                         child: Text(
-                          'Exit',
+                          "Exit",
                           style: textVerySmallBoldSmokyBlack,
                         ),
                       ),
@@ -164,8 +165,8 @@ class HomeView extends GetView<HomeController> {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
-                          Get.offAllNamed(
-                            Routes.CHOOSE_OPPONENT,
+                          Get.to(
+                            () => const ChooseOpponentView(),
                           );
                         },
                         style: ElevatedButton.styleFrom(

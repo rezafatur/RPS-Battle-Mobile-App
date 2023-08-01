@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rps_battle/app/modules/vsFriend/controllers/vs_friend_controller.dart';
 import 'package:rps_battle/app/modules/vsFriend/widgets/vs_friend_player1.dart';
 import 'package:rps_battle/app/modules/vsFriend/widgets/vs_friend_player2.dart';
 import 'package:rps_battle/app/modules/vsFriend/widgets/vs_friend_result.dart';
-import '../../../../core/utils/size_config.dart';
-import '../controllers/vs_friend_controller.dart';
+import 'package:rps_battle/core/utils/size_config.dart';
 
 class VsFriendView extends GetView<VsFriendController> {
   const VsFriendView({Key? key}) : super(key: key);
@@ -13,6 +13,10 @@ class VsFriendView extends GetView<VsFriendController> {
   Widget build(BuildContext context) {
     // Initializing the screen width and height
     SizeConfig().init(context);
+
+    Get.put(
+      VsFriendController(),
+    );
 
     return Scaffold(
       body: Stack(

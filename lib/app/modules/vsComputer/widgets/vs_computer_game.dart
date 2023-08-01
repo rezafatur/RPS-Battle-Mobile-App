@@ -1,11 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/text_theme.dart';
-import '../../../../core/utils/size_config.dart';
-import '../../../routes/app_pages.dart';
-import '../controllers/vs_computer_controller.dart';
+import 'package:rps_battle/app/modules/vsComputer/controllers/vs_computer_controller.dart';
+import 'package:rps_battle/app/routes/app_pages.dart';
+import 'package:rps_battle/core/theme/colors.dart';
+import 'package:rps_battle/core/theme/text_theme.dart';
+import 'package:rps_battle/core/utils/size_config.dart';
 
 class GameScreen extends StatelessWidget {
   const GameScreen({

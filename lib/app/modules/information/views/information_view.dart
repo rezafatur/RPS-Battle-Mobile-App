@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rps_battle/app/modules/information/controllers/information_controller.dart';
+import 'package:rps_battle/app/routes/app_pages.dart';
+import 'package:rps_battle/core/theme/colors.dart';
+import 'package:rps_battle/core/theme/text_theme.dart';
+import 'package:rps_battle/core/utils/size_config.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/text_theme.dart';
-import '../../../../core/utils/size_config.dart';
-import '../../../routes/app_pages.dart';
-import '../controllers/information_controller.dart';
 
 class InformationView extends GetView<InformationController> {
   const InformationView({Key? key}) : super(key: key);
@@ -175,6 +175,18 @@ class InformationView extends GetView<InformationController> {
                     ),
                   ],
                 ),
+              ),
+            ),
+          ),
+
+          // Section - Version
+          Padding(
+            padding: const EdgeInsets.all(30),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                "Version 1.0.1",
+                style: textVerySmall300White,
               ),
             ),
           ),

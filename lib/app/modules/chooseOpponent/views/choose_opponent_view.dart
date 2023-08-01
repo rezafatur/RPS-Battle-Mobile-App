@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/text_theme.dart';
-import '../../../../core/utils/size_config.dart';
-import '../../../routes/app_pages.dart';
-import '../controllers/choose_opponent_controller.dart';
+import 'package:rps_battle/app/modules/chooseOpponent/controllers/choose_opponent_controller.dart';
+import 'package:rps_battle/app/modules/vsComputer/views/vs_computer_view.dart';
+import 'package:rps_battle/app/modules/vsFriend/views/vs_friend_view.dart';
+import 'package:rps_battle/app/routes/app_pages.dart';
+import 'package:rps_battle/core/theme/colors.dart';
+import 'package:rps_battle/core/theme/text_theme.dart';
+import 'package:rps_battle/core/utils/size_config.dart';
 
 class ChooseOpponentView extends GetView<ChooseOpponentController> {
   const ChooseOpponentView({Key? key}) : super(key: key);
@@ -130,8 +132,8 @@ class ChooseOpponentView extends GetView<ChooseOpponentController> {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
-                          Get.offAllNamed(
-                            Routes.VS_FRIEND,
+                          Get.to(
+                            () => const VsFriendView(),
                           );
                         },
                         style: ElevatedButton.styleFrom(
@@ -142,7 +144,7 @@ class ChooseOpponentView extends GetView<ChooseOpponentController> {
                           backgroundColor: caribbeanGreen,
                         ),
                         child: Text(
-                          'Friend',
+                          "Friend",
                           style: textVerySmallBoldSmokyBlack,
                         ),
                       ),
@@ -164,8 +166,8 @@ class ChooseOpponentView extends GetView<ChooseOpponentController> {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
-                          Get.offAllNamed(
-                            Routes.VS_COMPUTER,
+                          Get.to(
+                            () => const VsComputerView(),
                           );
                         },
                         style: ElevatedButton.styleFrom(
@@ -176,7 +178,7 @@ class ChooseOpponentView extends GetView<ChooseOpponentController> {
                           backgroundColor: caribbeanGreen,
                         ),
                         child: Text(
-                          'Computer',
+                          "Computer",
                           style: textVerySmallBoldSmokyBlack,
                         ),
                       ),

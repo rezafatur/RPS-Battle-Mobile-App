@@ -2,9 +2,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rps_battle/app/modules/vsFriend/controllers/vs_friend_controller.dart';
-import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/text_theme.dart';
-import '../../../../core/utils/size_config.dart';
+import 'package:rps_battle/core/theme/colors.dart';
+import 'package:rps_battle/core/theme/text_theme.dart';
+import 'package:rps_battle/core/utils/size_config.dart';
 
 class GameScreenPlayer2 extends StatelessWidget {
   const GameScreenPlayer2({

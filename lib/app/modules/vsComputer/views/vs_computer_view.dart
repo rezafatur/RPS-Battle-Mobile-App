@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/utils/size_config.dart';
-import '../controllers/vs_computer_controller.dart';
-import '../widgets/vs_computer_game.dart';
-import '../widgets/vs_computer_result.dart';
+import 'package:rps_battle/app/modules/vsComputer/controllers/vs_computer_controller.dart';
+import 'package:rps_battle/app/modules/vsComputer/widgets/vs_computer_game.dart';
+import 'package:rps_battle/app/modules/vsComputer/widgets/vs_computer_result.dart';
+import 'package:rps_battle/core/utils/size_config.dart';
 
 class VsComputerView extends GetView<VsComputerController> {
   const VsComputerView({Key? key}) : super(key: key);
@@ -12,6 +12,10 @@ class VsComputerView extends GetView<VsComputerController> {
   Widget build(BuildContext context) {
     // Initializing the screen width and height
     SizeConfig().init(context);
+
+    Get.put(
+      VsComputerController(),
+    );
 
     return Scaffold(
       body: Stack(

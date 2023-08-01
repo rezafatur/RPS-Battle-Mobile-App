@@ -11,7 +11,7 @@ class VsComputerController extends GetxController {
   final Rx<Choice> userChoice = Rx(Choice.rock);
   final Rx<Choice> computerChoice = Rx(Choice.rock);
   final RxBool isReady = RxBool(false);
-  
+
   void setUserChoice(Choice choice) {
     userChoice.value = choice;
   }
